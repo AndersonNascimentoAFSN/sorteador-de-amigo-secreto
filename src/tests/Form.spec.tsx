@@ -7,8 +7,9 @@ describe('form', () => {
         test('new participants cannot be added', () => {
             render(<Form />);
 
-            const input = screen
-                .getByPlaceholderText('Insira os nomes dos participantes');
+            const input = screen.getByRole('textbox', {
+                name: /insira os nomes dos participantes/i
+            });
             const button = screen.getByRole('button');
 
             expect(input).toBeInTheDocument();
